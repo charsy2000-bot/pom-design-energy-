@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request a Quote | Peace of Mind LLC</title><style>
+:root{--navy:#153b4a;--green:#6d8f58;--light:#f5f7f3}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#24333a;background:var(--light)}
+.wrap{max-width:760px;margin:auto;padding:24px}header{background:#fff;border-bottom:1px solid #dde5df}.brand{font-weight:800;color:var(--navy);font-size:21px}.sub{font-size:10px;letter-spacing:1.5px;color:var(--green);font-weight:700}
+.card{background:#fff;margin:24px 0;padding:24px;border-radius:14px;box-shadow:0 8px 28px #153b4a12}h1,h2{color:var(--navy)}label{display:block;font-weight:700;margin:15px 0 6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #cfd8d2;border-radius:8px;font:inherit}textarea{min-height:110px}
+button,.btn{display:inline-block;border:0;background:var(--green);color:#fff;padding:13px 18px;border-radius:8px;font-weight:700;text-decoration:none;cursor:pointer}
+.note{font-size:12px;color:#5b676d;margin-top:18px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:600px){.row{grid-template-columns:1fr}}
+</style></head><body><header><div class="wrap"><div class="brand">PEACE OF MIND LLC</div><div class="sub">DESIGN • ENERGY • BUILDING SOLUTIONS</div></div></header>
+<main class="wrap"><div class="card"><a href="index.html">← Back to website</a><h1>Request a Quote</h1><p>Tell us about your project. When you tap <b>Send by WhatsApp</b>, your information is prepared as a WhatsApp message for Peace of Mind LLC.</p>
+<form id="f"><div class="row"><div><label>Name *</label><input id="name" required></div><div><label>Phone *</label><input id="phone" required></div></div>
+<label>Email</label><input id="email" type="email"><label>Project / Property Address</label><input id="address">
+<label>Service Requested *</label><select id="service" required><option value="">Select one</option><option>Design & Drafting</option><option>Energy Solutions</option><option>Design & Drafting + Energy Solutions</option></select>
+<label>Project Type</label><select id="type"><option>Residential Addition</option><option>Renovation</option><option>Existing-Condition / Measured Drawings</option><option>Floor Plans / Elevations / Sections</option><option>3D Concept</option><option>Solar Consultation</option><option>Heat Pump Consultation</option><option>Tankless Water Heater</option><option>Energy Efficiency</option><option>Other</option></select>
+<label>Project Description *</label><textarea id="desc" required placeholder="Describe what you would like to do..."></textarea>
+<div class="row"><div><label>Approximate Budget</label><input id="budget" placeholder="Optional"></div><div><label>Desired Timeline</label><input id="timeline" placeholder="Optional"></div></div>
+<label>Existing Information</label><select id="source"><option>To Be Verified</option><option>Client Supplied Measurements</option><option>Existing Drawings Available</option><option>Site Measurement Requested</option></select>
+<p class="note">Please do not send confidential financial, medical, or identity information. On-site existing-condition measurement/verification is not a land/property survey, structural inspection, or code inspection. Services requiring professional licensure are coordinated with appropriately licensed professionals when required.</p>
+<button type="submit">Send by WhatsApp</button></form></div></main>
+<script>document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+const g=id=>document.getElementById(id).value.trim();
+const msg=`Hello Peace of Mind LLC, I would like to request a quote.%0A%0AName: ${encodeURIComponent(g('name'))}%0APhone: ${encodeURIComponent(g('phone'))}%0AEmail: ${encodeURIComponent(g('email'))}%0AProject Address: ${encodeURIComponent(g('address'))}%0AService: ${encodeURIComponent(g('service'))}%0AProject Type: ${encodeURIComponent(g('type'))}%0AProject Description: ${encodeURIComponent(g('desc'))}%0ABudget: ${encodeURIComponent(g('budget'))}%0ATimeline: ${encodeURIComponent(g('timeline'))}%0AExisting Information: ${encodeURIComponent(g('source'))}`;
+window.location.href='https://wa.me/14012848463?text='+msg;});</script></body></html>
